@@ -1,0 +1,132 @@
+<?xml version="0.1"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<xs:element name="MDK">  
+  <xs:complexType>  
+    <xs:all>  
+      <xs:element name="id" type="xs:string"/>
+      <xs:element name="mpn" type="xs:string"/>
+      <xs:element name="opn" type="xs:string"/>
+      <xs:element name="version" type="xs:string"/>
+      <xs:element name="created_date" type="xs:date"/>
+      <xs:element name="updated_date" type="xs:date"/>
+      <xs:element name="type" type="xs:string" minOccurs="0"/>
+      <xs:element name="description" type="xs:string" minOccurs="0"/>
+      <xs:element name="authors"> 
+        <xs:complexType>  
+          <xs:choice>  
+            <xs:element name="person" minOccurs="1" maxOccurs="unbounded"> 
+              <xs:complexType>  
+                <xs:all>  
+                  <xs:element name="name" type="xs:string"/>
+                  <xs:element name="email" type="xs:string" minOccurs="0"/>
+                  <xs:element name="company" type="xs:string" minOccurs="0"/>
+                </xs:all>  
+              </xs:complexType>  
+            </xs:element> 
+          </xs:choice>  
+        </xs:complexType>  
+      </xs:element> 
+      <xs:element name="electrical"> 
+        <xs:complexType>  
+          <xs:all>  
+            <xs:element name="high_frequency"> 
+              <xs:complexType>  
+                <xs:all>  
+                  <xs:element name="Dk" type="xs:integer" minOccurs="0"/>
+                  <xs:element name="Df" type="xs:integer" minOccurs="0"/>
+                  <xs:element name="Conductivity" type="xs:integer" minOccurs="0"/>
+                </xs:all>  
+              </xs:complexType>  
+            </xs:element>  
+          </xs:all>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="thermal"> 
+        <xs:complexType>  
+          <xs:all>  
+            <xs:element name="steady_state"> 
+              <xs:complexType>  
+                <xs:all>  
+                  <xs:element name="thermal_conductivity" type="xs:integer" minOccurs="0"/>
+                  <xs:element name="surface_emissivity" type="xs:integer" minOccurs="0"/>
+                </xs:all>  
+              </xs:complexType>  
+            </xs:element>  
+            <xs:element name="transient"> 
+              <xs:complexType>  
+                <xs:all>  
+                  <xs:element name="specific_heat" type="xs:integer" minOccurs="0"/>
+                  <xs:element name="density" type="xs:integer" minOccurs="0"/>
+                </xs:all>  
+              </xs:complexType>  
+            </xs:element>  
+          </xs:all>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="structural"> 
+        <xs:complexType>  
+          <xs:all>  
+            <xs:element name="linear_elastic"> 
+              <xs:complexType>  
+                <xs:all>  
+                  <xs:element name="yound_modulus" type="xs:integer" minOccurs="0"/>
+                  <xs:element name="poisson_ratio" type="xs:integer" minOccurs="0"/>
+                </xs:all>  
+              </xs:complexType>  
+            </xs:element>  
+            <xs:element name="non_linear_elastic"> 
+              <xs:complexType>  
+                <xs:all>  
+                  <xs:element name="stress_strain_response" type="xs:integer" minOccurs="0"/>
+                </xs:all>  
+              </xs:complexType>  
+            </xs:element>  
+            <xs:element name="plastic"> 
+              <xs:complexType>  
+                <xs:all>  
+                  <xs:element name="stress_strain_response" type="xs:integer" minOccurs="0"/>
+                </xs:all>  
+              </xs:complexType>  
+            </xs:element>  
+            <xs:element name="failure"> 
+              <xs:complexType>  
+                <xs:all>  
+                  <xs:element name="yield_strength" type="xs:integer" minOccurs="0"/>
+                  <xs:element name="strength" type="xs:integer" minOccurs="0"/>
+                  <xs:element name="failure_criteria" type="xs:integer" minOccurs="0"/>
+                  <xs:element name="delamination" type="xs:integer" minOccurs="0"/>
+                  <xs:element name="fatigue" type="xs:integer" minOccurs="0"/>
+                  <xs:element name="fatigue_crack_growth" type="xs:integer" minOccurs="0"/>
+                  <xs:element name="fracture_toughness" type="xs:integer" minOccurs="0"/>
+                </xs:all>  
+              </xs:complexType>  
+            </xs:element>  
+            <xs:element name="thermo_mechenical"> 
+              <xs:complexType>  
+                <xs:all>  
+                  <xs:element name="cte" type="xs:integer" minOccurs="0"/>
+                </xs:all>  
+              </xs:complexType>  
+            </xs:element>  
+          </xs:all>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="optical"> 
+        <xs:complexType>  
+          <xs:all>  
+            <xs:element name="optical"> 
+              <xs:complexType>  
+                <xs:all>  
+                  <xs:element name="refractive_index" type="xs:integer" minOccurs="0"/>
+                  <xs:element name="reflectance" type="xs:integer" minOccurs="0"/>
+                  <xs:element name="transmission" type="xs:integer" minOccurs="0"/>
+                </xs:all>  
+              </xs:complexType>  
+            </xs:element>  
+          </xs:all>
+        </xs:complexType>
+      </xs:element>
+    </xs:all>  
+  </xs:complexType>  
+</xs:element>  
+</xs:schema>
